@@ -72,9 +72,9 @@ testset = DermaMNIST(split="test", transform=transform_test, download=download, 
 validset= DermaMNIST(split="val", transform=transform_train, download=download, size=224)
 pilset = DermaMNIST(split="train", download=download)
 
-trainloader = torch.utils.data.DataLoader(dataset=trainset, batch_size=batch_size, shuffle=True)
+trainloader = torch.utils.data.DataLoader(dataset=trainset, batch_size=batch_size, shuffle=True,num_workers=0)
 #train_loader_at_eval = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=2*batch_size, shuffle=False)
-testloader = torch.utils.data.DataLoader(dataset=testset, batch_size=2*batch_size, shuffle=False)
+testloader = torch.utils.data.DataLoader(dataset=testset, batch_size=2*batch_size, shuffle=False,num_workers=0)
 
 #classes = ('0','1','2','3','4','5','6')
 
